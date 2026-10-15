@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="<!-- figma:lang -->">
+<head>
+    <!-- figma:head-start -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><!-- figma:title -->No Matching Facilities - KPTM Smart Campus</title>
+    
+    <!-- Google Fonts & Phosphor Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        kptm: { crimson: '#A6192E', maroon: '#672728' },
+                        semantic: { warning: '#FFF8E5', warningText: '#855A00' }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+        .tap-effect:active { transform: scale(0.98); transition: transform 0.1s ease-out; }
+        .nav-item.active { color: #A6192E; }
+        .nav-item { color: #9ca3af; transition: color 0.2s ease; }
+        .nav-item:hover { color: #6b7280; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+    <!-- figma:head-end -->
+</head>
+<body class="bg-gray-50 text-gray-900 h-[844px] w-[390px] border border-gray-200 mx-auto flex flex-col justify-between overflow-hidden relative shadow-xl">
+    <!-- figma:body-start -->
+    
+    <!-- Top Bar Header -->
+    <header class="bg-kptm-crimson text-white px-5 py-4 flex justify-between items-center z-10">
+        <div class="flex flex-col">
+            <span class="font-bold text-lg leading-tight tracking-tight">KPTM Smart Campus</span>
+            <span class="text-[13px] opacity-90">Batu Pahat</span>
+        </div>
+        <div class="w-[34px] h-[34px] rounded-full bg-white text-kptm-crimson flex items-center justify-center font-bold text-xs shadow-sm">
+            BBY
+        </div>
+    </header>
+
+    <!-- Scrollable Main Viewport -->
+    <main class="flex-1 overflow-y-auto px-5 py-6 no-scrollbar pb-24">
+        <p class="text-[11px] font-bold tracking-[0.15em] text-gray-500 uppercase mb-1.5">KPTM Batu Pahat / Smart Campus</p>
+        <h1 class="text-[32px] leading-[38.4px] font-bold mb-2">No matching facilities</h1>
+        <p class="text-[14px] leading-[21px] text-gray-600 mb-6">Your search is saved. Adjust only what you need.</p>
+
+        <!-- Saved Filter Parameters Card -->
+        <div class="bg-white border border-gray-200 rounded-xl p-4 mb-6 shadow-sm flex flex-col gap-3">
+            <h2 class="text-[14px] font-bold text-gray-900">Booking filters</h2>
+            
+            <div class="grid grid-cols-2 gap-2 text-[12px]">
+                <div>
+                    <span class="text-gray-500 block">Date</span>
+                    <span class="font-semibold text-gray-800">13 Oct 2026</span>
+                </div>
+                <div>
+                    <span class="text-gray-500 block">Time (MYT)</span>
+                    <span class="font-semibold text-gray-800">15:00-16:00</span>
+                </div>
+                <div>
+                    <span class="text-gray-500 block">Room size</span>
+                    <span class="font-semibold text-gray-800">30+ people</span>
+                </div>
+                <div>
+                    <span class="text-gray-500 block">Equipment</span>
+                    <span class="font-semibold text-gray-800">GPU workstations + projector</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 0 Results Error Container -->
+        <div class="bg-red-50 border border-red-200 rounded-xl p-5 mb-6 shadow-sm flex flex-col gap-3">
+            <div class="flex items-center gap-2 text-kptm-crimson font-bold text-[16px]">
+                <i class="ph-bold ph-x-circle text-[22px]"></i>
+                <span>No space meets all requirements</span>
+            </div>
+            
+            <p class="text-[13px] text-gray-700 leading-relaxed">
+                No demo facility has both GPU workstations and a working projector for 30 people at this time. Networking Lab 2 holds 24 and its projector is unavailable.
+            </p>
+
+            <!-- Active Tags -->
+            <div class="flex flex-wrap gap-1.5 my-1">
+                <span class="bg-white border border-red-200 text-kptm-crimson text-[11px] font-semibold px-2.5 py-1 rounded-md">13 Oct 15:00-16:00</span>
+                <span class="bg-white border border-red-200 text-kptm-crimson text-[11px] font-semibold px-2.5 py-1 rounded-md">30+ people</span>
+                <span class="bg-white border border-red-200 text-kptm-crimson text-[11px] font-semibold px-2.5 py-1 rounded-md">GPU + projector</span>
+                <span class="bg-white border border-red-200 text-kptm-crimson text-[11px] font-semibold px-2.5 py-1 rounded-md">Step-free access</span>
+            </div>
+
+            <div class="flex flex-col gap-2 mt-2">
+                <a href="search.html" class="w-full bg-kptm-crimson text-white font-semibold py-2.5 rounded-lg text-[13px] text-center tap-effect shadow-sm">
+                    Reset equipment & size
+                </a>
+                <a href="search.html" class="w-full bg-white border border-gray-300 text-gray-800 font-semibold py-2.5 rounded-lg text-[13px] text-center tap-effect">
+                    Change time
+                </a>
+            </div>
+        </div>
+
+        <!-- Suggestion Card -->
+        <div class="bg-white border border-gray-200 rounded-xl p-4 mb-6 shadow-sm">
+            <h3 class="font-bold text-[14px] text-gray-900 mb-1">Try a practical alternative</h3>
+            <p class="text-[13px] text-gray-600 leading-relaxed mb-4">
+                For a four-person network project, choose the lab's PCs, switches and HDMI display instead of a projector.
+            </p>
+            <a href="search.html" class="block w-full bg-gray-100 hover:bg-gray-200 text-gray-900 font-semibold text-center py-2.5 rounded-lg text-[13px] tap-effect">
+                Return to facility search
+            </a>
+        </div>
+    </main>
+
+    <!-- Persistent Bottom Navigation Bar -->
+    <nav class="bg-white border-t border-gray-200 flex justify-around items-center pt-3 pb-6 px-2 absolute bottom-0 w-full z-20">
+        <a href="index.html" class="nav-item flex flex-col items-center gap-1 w-[72px] tap-effect">
+            <i class="ph ph-house text-[24px]"></i>
+            <span class="text-[11px] font-semibold">Home</span>
+        </a>
+        <a href="search.html" class="nav-item active flex flex-col items-center gap-1 w-[72px] tap-effect">
+            <i class="ph-fill ph-squares-four text-[24px]"></i>
+            <span class="text-[11px] font-semibold">Rooms</span>
+        </a>
+        <a href="bookings.html" class="nav-item flex flex-col items-center gap-1 w-[72px] tap-effect">
+            <i class="ph ph-calendar-blank text-[24px]"></i>
+            <span class="text-[11px] font-semibold">Bookings</span>
+        </a>
+        <a href="tracking.html" class="nav-item flex flex-col items-center gap-1 w-[72px] tap-effect">
+            <i class="ph ph-wrench text-[24px]"></i>
+            <span class="text-[11px] font-semibold">Repairs</span>
+        </a>
+    </nav>
+
+    <!-- figma:body-end -->
+</body>
+</html>

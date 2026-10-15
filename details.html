@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="<!-- figma:lang -->">
+<head>
+    <!-- figma:head-start -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><!-- figma:title -->Facility Details - Networking Lab 2</title>
+    
+    <!-- Google Fonts & Phosphor Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        kptm: { crimson: '#A6192E', maroon: '#672728' },
+                        semantic: { warning: '#FFF8E5', warningText: '#855A00' }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+        .tap-effect:active { transform: scale(0.98); transition: transform 0.1s ease-out; }
+        .nav-item.active { color: #A6192E; }
+        .nav-item { color: #9ca3af; transition: color 0.2s ease; }
+        .nav-item:hover { color: #6b7280; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+    <!-- figma:head-end -->
+</head>
+<body class="bg-gray-50 text-gray-900 h-[844px] w-[390px] border border-gray-200 mx-auto flex flex-col justify-between overflow-hidden relative shadow-xl">
+    <!-- figma:body-start -->
+    
+    <!-- Top Bar Header -->
+    <header class="bg-kptm-crimson text-white px-5 py-4 flex justify-between items-center z-10">
+        <div class="flex flex-col">
+            <span class="font-bold text-lg leading-tight tracking-tight">KPTM Smart Campus</span>
+            <span class="text-[13px] opacity-90">Batu Pahat</span>
+        </div>
+        <div class="w-[34px] h-[34px] rounded-full bg-white text-kptm-crimson flex items-center justify-center font-bold text-xs shadow-sm">
+            BBY
+        </div>
+    </header>
+
+    <!-- Scrollable Main Viewport -->
+    <main class="flex-1 overflow-y-auto px-5 py-6 no-scrollbar pb-24">
+        
+        <!-- Back Link -->
+        <a href="search.html" class="inline-flex items-center gap-1.5 text-gray-600 font-semibold text-[13px] mb-4 tap-effect">
+            <i class="ph-bold ph-arrow-left"></i> Back to facility search
+        </a>
+
+        <p class="text-[11px] font-bold tracking-[0.15em] text-gray-500 uppercase mb-1.5">KPTM Batu Pahat / Smart Campus</p>
+        <h1 class="text-[28px] leading-[34px] font-bold text-gray-900 mb-0.5">Networking Lab 2</h1>
+        <p class="text-[13px] text-gray-600 mb-5">Computing Block · Level 1</p>
+
+        <!-- Room Schematic Section -->
+        <div class="bg-gray-100 rounded-xl p-4 mb-6 border border-gray-200 shadow-sm">
+            <p class="text-[11px] font-bold tracking-wider text-gray-700 uppercase mb-3">Illustrative Layout · Not to scale</p>
+            
+            <!-- Banner -->
+            <div class="bg-kptm-maroon text-white text-center py-2 rounded text-[12px] font-semibold mb-3">
+                HDMI display · network demonstration area
+            </div>
+
+            <!-- PC Grid -->
+            <div class="grid grid-cols-3 gap-2.5 mb-3">
+                <div class="bg-gray-200 border border-gray-300 rounded p-2.5 flex flex-col items-center justify-center opacity-60">
+                    <i class="ph ph-desktop text-gray-400 text-[20px] mb-0.5"></i>
+                    <span class="text-[11px] text-gray-500 font-medium">4 PCs</span>
+                </div>
+                <div class="bg-gray-200 border border-gray-300 rounded p-2.5 flex flex-col items-center justify-center opacity-60">
+                    <i class="ph ph-desktop text-gray-400 text-[20px] mb-0.5"></i>
+                    <span class="text-[11px] text-gray-500 font-medium">4 PCs</span>
+                </div>
+                <div class="bg-gray-200 border border-gray-300 rounded p-2.5 flex flex-col items-center justify-center opacity-60">
+                    <i class="ph ph-desktop text-gray-400 text-[20px] mb-0.5"></i>
+                    <span class="text-[11px] text-gray-500 font-medium">4 PCs</span>
+                </div>
+                <div class="bg-gray-200 border border-gray-300 rounded p-2.5 flex flex-col items-center justify-center opacity-60">
+                    <i class="ph ph-desktop text-gray-400 text-[20px] mb-0.5"></i>
+                    <span class="text-[11px] text-gray-500 font-medium">4 PCs</span>
+                </div>
+                <div class="bg-white border-2 border-kptm-crimson rounded p-2.5 flex flex-col items-center justify-center shadow-sm">
+                    <i class="ph ph-desktop text-kptm-crimson text-[20px] mb-0.5"></i>
+                    <span class="text-[11px] text-gray-900 font-bold">4 PCs</span>
+                </div>
+                <div class="bg-white border border-gray-300 rounded p-2.5 flex flex-col items-center justify-center shadow-sm">
+                    <i class="ph ph-desktop text-kptm-crimson text-[20px] mb-0.5"></i>
+                    <span class="text-[11px] text-gray-900 font-bold">4 PCs</span>
+                </div>
+            </div>
+            
+            <p class="text-[12px] text-gray-600 font-semibold">16 PCs occupied. 8 left.</p>
+        </div>
+
+        <!-- Facility Info & Warnings -->
+        <div class="mb-6 flex flex-col gap-3">
+            <div>
+                <h3 class="font-bold text-[14px] text-gray-900 mb-1">Capacity 16/24</h3>
+                <p class="text-[13px] text-gray-600 leading-relaxed">
+                    24 PCs, managed network switches, Ethernet kits, Wi-Fi, power sockets and HDMI display.
+                </p>
+            </div>
+            
+            <div class="bg-semantic-warning p-3 rounded-lg border border-[#FDE68A]">
+                <div class="flex items-center gap-1.5 text-semantic-warningText font-bold text-[12px] mb-1">
+                    <i class="ph-fill ph-warning"></i><span>Projector unavailable demo fault</span>
+                </div>
+                <p class="text-[11px] text-semantic-warningText leading-tight">
+                    PRJ-NL2 does not power on. It is isolated from use; PCs, HDMI display and switches are usable. Room remains bookable only under this safe demo condition.
+                </p>
+            </div>
+        </div>
+
+        <!-- Booking Form Parameters -->
+        <div class="border-t border-gray-200 pt-5 mb-6">
+            <h2 class="text-[18px] font-bold text-gray-900 mb-4">Choose your time</h2>
+            
+            <div class="mb-4">
+                <label class="block text-[12px] font-bold text-gray-700 mb-1">Booking date</label>
+                <div class="w-full bg-gray-100 border border-gray-300 rounded-lg p-3 text-[13px] font-semibold text-gray-800">
+                    Tue, 13 Oct 2026
+                </div>
+            </div>
+
+            <div class="mb-5">
+                <label class="block text-[12px] font-bold text-gray-700 mb-1">1-hour slots MYT. Booked slots cannot be selected.</label>
+                <div class="grid grid-cols-2 gap-2.5">
+                    <div class="bg-gray-100 border border-gray-200 text-gray-400 rounded-lg py-2.5 text-center text-[13px] font-medium flex justify-center items-center gap-1.5">
+                        <i class="ph-bold ph-x"></i> 14:00-15:00 (Booked)
+                    </div>
+                    <div class="bg-blue-50 border-2 border-[#2456A6] text-[#2456A6] rounded-lg py-2.5 text-center text-[13px] font-bold flex justify-center items-center gap-1.5 shadow-sm">
+                        <i class="ph-bold ph-check"></i> 15:00-16:00 (Selected)
+                    </div>
+                    <div class="bg-white border border-gray-300 text-gray-900 rounded-lg py-2.5 text-center text-[13px] font-medium tap-effect">
+                        16:00-17:00
+                    </div>
+                    <div class="bg-white border border-gray-300 text-gray-900 rounded-lg py-2.5 text-center text-[13px] font-medium tap-effect">
+                        17:00-18:00
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-[12px] font-bold text-gray-700 mb-1">Attendees</label>
+                <div class="w-full bg-white border border-gray-300 rounded-lg p-3 text-[13px] font-medium text-gray-800 flex justify-between items-center">
+                    <span>4 people</span>
+                    <i class="ph ph-caret-down text-gray-500"></i>
+                </div>
+            </div>
+
+            <div class="mb-5">
+                <label class="block text-[12px] font-bold text-gray-700 mb-1">Purpose</label>
+                <div class="w-full bg-white border border-gray-300 rounded-lg p-3 text-[13px] font-medium text-gray-800">
+                    Network topology group project
+                </div>
+            </div>
+
+            <!-- Booking Policy Notice -->
+            <div class="bg-gray-100 p-3 rounded-lg border border-gray-200 mb-5">
+                <h4 class="font-bold text-[12px] text-gray-900 mb-0.5">Demo booking policy</h4>
+                <p class="text-[11px] text-gray-600 leading-relaxed">
+                    Maximum 2 hours. Arrive within 10 minutes. Leave workstations tidy and sign out. Cancel before the start time.
+                </p>
+            </div>
+
+            <div class="flex items-center gap-2 mb-6">
+                <input type="checkbox" id="policy" checked class="w-4 h-4 text-kptm-crimson rounded border-gray-300 focus:ring-kptm-crimson">
+                <label for="policy" class="text-[12px] font-medium text-gray-700">I agree to the demo booking policy</label>
+            </div>
+
+            <a href="confirmation.html" class="block w-full bg-kptm-crimson text-white text-center font-bold py-3.5 rounded-xl text-[15px] tap-effect shadow-md">
+                Confirm booking
+            </a>
+            <p class="text-center text-[11px] text-gray-500 mt-2">No reservation exists until confirmation succeeds.</p>
+        </div>
+    </main>
+
+    <!-- Persistent Bottom Navigation Bar -->
+    <nav class="bg-white border-t border-gray-200 flex justify-around items-center pt-3 pb-6 px-2 absolute bottom-0 w-full z-20">
+        <a href="index.html" class="nav-item flex flex-col items-center gap-1 w-[72px] tap-effect">
+            <i class="ph ph-house text-[24px]"></i>
+            <span class="text-[11px] font-semibold">Home</span>
+        </a>
+        <a href="search.html" class="nav-item active flex flex-col items-center gap-1 w-[72px] tap-effect">
+            <i class="ph-fill ph-squares-four text-[24px]"></i>
+            <span class="text-[11px] font-semibold">Rooms</span>
+        </a>
+        <a href="bookings.html" class="nav-item flex flex-col items-center gap-1 w-[72px] tap-effect">
+            <i class="ph ph-calendar-blank text-[24px]"></i>
+            <span class="text-[11px] font-semibold">Bookings</span>
+        </a>
+        <a href="tracking.html" class="nav-item flex flex-col items-center gap-1 w-[72px] tap-effect">
+            <i class="ph ph-wrench text-[24px]"></i>
+            <span class="text-[11px] font-semibold">Repairs</span>
+        </a>
+    </nav>
+
+    <!-- figma:body-end -->
+</body>
+</html>

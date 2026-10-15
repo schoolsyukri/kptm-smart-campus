@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="<!-- figma:lang -->">
+<head>
+    <!-- figma:head-start -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><!-- figma:title -->Report Equipment Fault - KPTM Smart Campus</title>
+    
+    <!-- Google Fonts & Phosphor Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        kptm: { crimson: '#A6192E', maroon: '#672728' },
+                        semantic: { warning: '#FFF8E5', warningText: '#855A00', emptyText: '#166534', emptyBorder: '#bbf7d0' }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+        .tap-effect:active { transform: scale(0.98); transition: transform 0.1s ease-out; }
+        .nav-item.active { color: #A6192E; }
+        .nav-item { color: #9ca3af; transition: color 0.2s ease; }
+        .nav-item:hover { color: #6b7280; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+    <!-- figma:head-end -->
+</head>
+<body class="bg-gray-50 text-gray-900 h-[844px] w-[390px] border border-gray-200 mx-auto flex flex-col justify-between overflow-hidden relative shadow-xl">
+    <!-- figma:body-start -->
+    
+    <!-- Top Bar Header -->
+    <header class="bg-kptm-crimson text-white px-5 py-4 flex justify-between items-center z-10">
+        <div class="flex flex-col">
+            <span class="font-bold text-lg leading-tight tracking-tight">KPTM Smart Campus</span>
+            <span class="text-[13px] opacity-90">Batu Pahat</span>
+        </div>
+        <div class="w-[34px] h-[34px] rounded-full bg-white text-kptm-crimson flex items-center justify-center font-bold text-xs shadow-sm">
+            BBY
+        </div>
+    </header>
+
+    <!-- Scrollable Main Viewport -->
+    <main class="flex-1 overflow-y-auto px-5 py-6 no-scrollbar pb-24">
+        <!-- Back Link -->
+        <a href="index.html" class="inline-flex items-center gap-1.5 text-gray-600 font-semibold text-[13px] mb-4 tap-effect">
+            <i class="ph-bold ph-arrow-left"></i> Back to dashboard
+        </a>
+
+        <p class="text-[11px] font-bold tracking-[0.15em] text-gray-500 uppercase mb-1.5">KPTM Batu Pahat / Smart Campus</p>
+        <h1 class="text-[28px] leading-[34px] font-bold text-gray-900 mb-0.5">Report equipment</h1>
+        <p class="text-[13px] text-gray-600 mb-5">Log a broken or faulty facility item for campus maintenance.</p>
+
+        <form action="tracking.html" class="space-y-4">
+            <!-- Facility Selection -->
+            <div>
+                <label class="block text-[12px] font-bold text-gray-700 mb-1">Select Facility *</label>
+                <select class="w-full bg-white border border-gray-300 rounded-lg p-3 text-[13px] font-medium text-gray-800 focus:outline-none focus:border-kptm-crimson">
+                    <option value="nl2" selected>Networking Lab 2 (Computing Block Level 1)</option>
+                    <option value="hm">Hardware Makerspace (Innovation Area Ground Floor)</option>
+                    <option value="dr1">Discussion Room 1 (Learning Commons)</option>
+                </select>
+            </div>
+
+            <!-- Equipment Identifier -->
+            <div>
+                <label class="block text-[12px] font-bold text-gray-700 mb-1">Equipment / Item *</label>
+                <input type="text" value="PRJ-NL2 (Ceiling Projector)" class="w-full bg-white border border-gray-300 rounded-lg p-3 text-[13px] font-medium text-gray-800 focus:outline-none focus:border-kptm-crimson" placeholder="e.g. PC-04, Projector, AC Unit">
+            </div>
+
+            <!-- Fault Category -->
+            <div>
+                <label class="block text-[12px] font-bold text-gray-700 mb-1">Issue Category *</label>
+                <select class="w-full bg-white border border-gray-300 rounded-lg p-3 text-[13px] font-medium text-gray-800 focus:outline-none focus:border-kptm-crimson">
+                    <option value="display" selected>Display / Projector Failure</option>
+                    <option value="hardware">Hardware / Physical Damage</option>
+                    <option value="network">Network / Connectivity</option>
+                    <option value="power">Power / Electrical</option>
+                </select>
+            </div>
+
+            <!-- Description Textarea -->
+            <div>
+                <label class="block text-[12px] font-bold text-gray-700 mb-1">Fault Description *</label>
+                <textarea rows="3" class="w-full bg-white border border-gray-300 rounded-lg p-3 text-[13px] font-medium text-gray-800 focus:outline-none focus:border-kptm-crimson placeholder-gray-400">Projector PRJ-NL2 does not turn on when pressing the power switch or remote controller. Power LED flashes orange rapidly.</textarea>
+            </div>
+
+            <!-- Photo Upload Dropzone -->
+            <div>
+                <label class="block text-[12px] font-bold text-gray-700 mb-1">Attach Photo (Optional)</label>
+                <div class="border-2 border-dashed border-gray-300 bg-white rounded-xl p-4 flex flex-col items-center justify-center text-center cursor-pointer hover:border-kptm-crimson transition-colors">
+                    <i class="ph ph-camera text-[28px] text-gray-400 mb-1"></i>
+                    <span class="text-[12px] font-semibold text-gray-700">Tap to take photo or upload image</span>
+                    <span class="text-[10px] text-gray-400 mt-0.5">Supports JPG, PNG up to 10MB</span>
+                </div>
+            </div>
+
+            <!-- Action buttons -->
+            <div class="pt-2 flex flex-col gap-2">
+                <button type="submit" class="w-full bg-kptm-crimson text-white font-bold py-3.5 rounded-xl text-[15px] tap-effect shadow-md text-center">
+                    Submit Fault Report
+                </button>
+                <a href="report-error.html" class="w-full bg-white border border-gray-300 text-gray-600 font-medium py-2 rounded-lg text-[12px] text-center tap-effect">
+                    Demo: Test validation error screen
+                </a>
+            </div>
+        </form>
+
+        <div class="bg-gray-100 p-3 rounded-lg border border-gray-200 mt-5">
+            <h3 class="font-bold text-[12px] text-gray-900 mb-0.5">What happens next?</h3>
+            <p class="text-[11px] text-gray-600 leading-relaxed">
+                Submitted reports are instantly triaged by campus ICT facility staff. Ticket status updates are tracked under "Repairs".
+            </p>
+        </div>
+    </main>
+
+    <!-- Persistent Bottom Navigation Bar -->
+    <nav class="bg-white border-t border-gray-200 flex justify-around items-center pt-3 pb-6 px-2 absolute bottom-0 w-full z-20">
+        <a href="index.html" class="nav-item flex flex-col items-center gap-1 w-[72px] tap-effect">
+            <i class="ph ph-house text-[24px]"></i>
+            <span class="text-[11px] font-semibold">Home</span>
+        </a>
+        <a href="search.html" class="nav-item flex flex-col items-center gap-1 w-[72px] tap-effect">
+            <i class="ph ph-squares-four text-[24px]"></i>
+            <span class="text-[11px] font-semibold">Rooms</span>
+        </a>
+        <a href="bookings.html" class="nav-item flex flex-col items-center gap-1 w-[72px] tap-effect">
+            <i class="ph ph-calendar-blank text-[24px]"></i>
+            <span class="text-[11px] font-semibold">Bookings</span>
+        </a>
+        <a href="tracking.html" class="nav-item active flex flex-col items-center gap-1 w-[72px] tap-effect">
+            <i class="ph-fill ph-wrench text-[24px]"></i>
+            <span class="text-[11px] font-semibold">Repairs</span>
+        </a>
+    </nav>
+
+    <!-- figma:body-end -->
+</body>
+</html>

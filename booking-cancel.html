@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="<!-- figma:lang -->">
+<head>
+    <!-- figma:head-start -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><!-- figma:title -->Cancel Booking - KPTM Smart Campus</title>
+    
+    <!-- Google Fonts & Phosphor Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        kptm: { crimson: '#A6192E', maroon: '#672728' },
+                        semantic: { warning: '#FFF8E5', warningText: '#855A00', emptyText: '#166534', emptyBorder: '#bbf7d0' }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+        .tap-effect:active { transform: scale(0.98); transition: transform 0.1s ease-out; }
+        .nav-item.active { color: #A6192E; }
+        .nav-item { color: #9ca3af; transition: color 0.2s ease; }
+        .nav-item:hover { color: #6b7280; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+    <!-- figma:head-end -->
+</head>
+<body class="bg-gray-50 text-gray-900 h-[844px] w-[390px] border border-gray-200 mx-auto flex flex-col justify-between overflow-hidden relative shadow-xl">
+    <!-- figma:body-start -->
+    
+    <!-- Top Bar Header -->
+    <header class="bg-kptm-crimson text-white px-5 py-4 flex justify-between items-center z-10">
+        <div class="flex flex-col">
+            <span class="font-bold text-lg leading-tight tracking-tight">KPTM Smart Campus</span>
+            <span class="text-[13px] opacity-90">Batu Pahat</span>
+        </div>
+        <div class="w-[34px] h-[34px] rounded-full bg-white text-kptm-crimson flex items-center justify-center font-bold text-xs shadow-sm">
+            BBY
+        </div>
+    </header>
+
+    <!-- Scrollable Main Viewport -->
+    <main class="flex-1 overflow-y-auto px-5 py-6 no-scrollbar pb-24">
+        <!-- Back Link -->
+        <a href="bookings.html" class="inline-flex items-center gap-1.5 text-gray-600 font-semibold text-[13px] mb-4 tap-effect">
+            <i class="ph-bold ph-arrow-left"></i> Back to bookings
+        </a>
+
+        <p class="text-[11px] font-bold tracking-[0.15em] text-gray-500 uppercase mb-1.5">KPTM Batu Pahat / Smart Campus</p>
+        <h1 class="text-[28px] leading-[34px] font-bold text-gray-900 mb-0.5">Cancel booking</h1>
+        <p class="text-[13px] text-gray-600 mb-5">Please confirm if you wish to release this reservation.</p>
+
+        <!-- Modal / Cancellation Box -->
+        <div class="bg-white border border-gray-200 rounded-xl p-5 mb-5 shadow-sm flex flex-col gap-4">
+            <div class="flex items-start gap-3 bg-red-50 p-3.5 rounded-lg border border-red-200">
+                <i class="ph-bold ph-warning-circle text-kptm-crimson text-[24px] shrink-0 mt-0.5"></i>
+                <div>
+                    <h2 class="font-bold text-[14px] text-kptm-crimson mb-0.5">Are you sure?</h2>
+                    <p class="text-[12px] text-gray-700 leading-relaxed">
+                        Cancelling will immediately release this slot for other students. This action cannot be undone.
+                    </p>
+                </div>
+            </div>
+
+            <div class="space-y-2.5 text-[12px] bg-gray-50 p-3.5 rounded-lg border border-gray-200">
+                <div class="flex justify-between border-b border-gray-200 pb-2">
+                    <span class="text-gray-500">Booking Reference</span>
+                    <span class="font-bold text-gray-900">BK-261013-042</span>
+                </div>
+                <div>
+                    <span class="text-gray-500 block text-[11px]">Facility</span>
+                    <span class="font-semibold text-gray-800">Networking Lab 2</span>
+                </div>
+                <div>
+                    <span class="text-gray-500 block text-[11px]">Date & Time (MYT)</span>
+                    <span class="font-semibold text-gray-800">Tue, 13 Oct 2026 · 15:00-16:00</span>
+                </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="flex flex-col gap-2.5 pt-2">
+                <a href="bookings.html" class="w-full bg-kptm-crimson text-white font-bold py-3 rounded-xl text-[14px] text-center tap-effect shadow-sm">
+                    Yes, cancel reservation
+                </a>
+                <a href="bookings.html" class="w-full bg-white border border-gray-300 text-gray-800 font-semibold py-3 rounded-xl text-[14px] text-center tap-effect">
+                    Keep my booking
+                </a>
+            </div>
+        </div>
+
+        <div class="bg-gray-100 p-3 rounded-lg border border-gray-200">
+            <h3 class="font-bold text-[12px] text-gray-900 mb-0.5">Cancellation Policy</h3>
+            <p class="text-[11px] text-gray-600 leading-relaxed">
+                Reservations must be cancelled before the scheduled start time (15:00 MYT) to allow fair access for all campus students.
+            </p>
+        </div>
+    </main>
+
+    <!-- Persistent Bottom Navigation Bar -->
+    <nav class="bg-white border-t border-gray-200 flex justify-around items-center pt-3 pb-6 px-2 absolute bottom-0 w-full z-20">
+        <a href="index.html" class="nav-item flex flex-col items-center gap-1 w-[72px] tap-effect">
+            <i class="ph ph-house text-[24px]"></i>
+            <span class="text-[11px] font-semibold">Home</span>
+        </a>
+        <a href="search.html" class="nav-item flex flex-col items-center gap-1 w-[72px] tap-effect">
+            <i class="ph ph-squares-four text-[24px]"></i>
+            <span class="text-[11px] font-semibold">Rooms</span>
+        </a>
+        <a href="bookings.html" class="nav-item active flex flex-col items-center gap-1 w-[72px] tap-effect">
+            <i class="ph-fill ph-calendar-blank text-[24px]"></i>
+            <span class="text-[11px] font-semibold">Bookings</span>
+        </a>
+        <a href="tracking.html" class="nav-item flex flex-col items-center gap-1 w-[72px] tap-effect">
+            <i class="ph ph-wrench text-[24px]"></i>
+            <span class="text-[11px] font-semibold">Repairs</span>
+        </a>
+    </nav>
+
+    <!-- figma:body-end -->
+</body>
+</html>

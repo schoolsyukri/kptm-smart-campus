@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="<!-- figma:lang -->">
+<head>
+    <!-- figma:head-start -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><!-- figma:title -->Change Booking - KPTM Smart Campus</title>
+    
+    <!-- Google Fonts & Phosphor Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        kptm: { crimson: '#A6192E', maroon: '#672728' },
+                        semantic: { warning: '#FFF8E5', warningText: '#855A00', emptyText: '#166534', emptyBorder: '#bbf7d0' }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+        .tap-effect:active { transform: scale(0.98); transition: transform 0.1s ease-out; }
+        .nav-item.active { color: #A6192E; }
+        .nav-item { color: #9ca3af; transition: color 0.2s ease; }
+        .nav-item:hover { color: #6b7280; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+    <!-- figma:head-end -->
+</head>
+<body class="bg-gray-50 text-gray-900 h-[844px] w-[390px] border border-gray-200 mx-auto flex flex-col justify-between overflow-hidden relative shadow-xl">
+    <!-- figma:body-start -->
+    
+    <!-- Top Bar Header -->
+    <header class="bg-kptm-crimson text-white px-5 py-4 flex justify-between items-center z-10">
+        <div class="flex flex-col">
+            <span class="font-bold text-lg leading-tight tracking-tight">KPTM Smart Campus</span>
+            <span class="text-[13px] opacity-90">Batu Pahat</span>
+        </div>
+        <div class="w-[34px] h-[34px] rounded-full bg-white text-kptm-crimson flex items-center justify-center font-bold text-xs shadow-sm">
+            BBY
+        </div>
+    </header>
+
+    <!-- Scrollable Main Viewport -->
+    <main class="flex-1 overflow-y-auto px-5 py-6 no-scrollbar pb-24">
+        <!-- Back Link -->
+        <a href="bookings.html" class="inline-flex items-center gap-1.5 text-gray-600 font-semibold text-[13px] mb-4 tap-effect">
+            <i class="ph-bold ph-arrow-left"></i> Back to bookings
+        </a>
+
+        <p class="text-[11px] font-bold tracking-[0.15em] text-gray-500 uppercase mb-1.5">KPTM Batu Pahat / Smart Campus</p>
+        <h1 class="text-[28px] leading-[34px] font-bold text-gray-900 mb-0.5">Change booking time slot</h1>
+        <p class="text-[13px] text-gray-600 mb-5">Choose a new time for Networking Lab 2. Your current slot stays confirmed until the change is confirmed.</p>
+
+        <!-- Facility Card -->
+        <div class="bg-white border border-gray-200 rounded-xl p-4 mb-5 shadow-sm flex flex-col gap-3">
+            <div class="border-b border-gray-100 pb-2.5">
+                <h2 class="font-bold text-[16px] text-gray-900">Networking Lab 2</h2>
+                <p class="text-[12px] text-gray-500">Computing block Level 1</p>
+            </div>
+
+            <div>
+                <label class="block text-[12px] font-bold text-gray-700 mb-1.5">Tue, 13 Oct 2026 — Select a new time slot</label>
+                
+                <div class="flex flex-col gap-2.5 mb-3">
+                    <div class="bg-gray-100 border border-gray-200 text-gray-400 rounded-lg p-3 text-[13px] font-medium flex justify-between items-center">
+                        <span>14:00-15:00</span>
+                        <span class="text-[11px] font-semibold">(Booked)</span>
+                    </div>
+
+                    <div class="bg-gray-50 border border-gray-300 text-gray-600 rounded-lg p-3 text-[13px] font-medium flex justify-between items-center">
+                        <span>15:00-16:00</span>
+                        <span class="text-[11px] font-semibold bg-gray-200 px-2 py-0.5 rounded">(Current)</span>
+                    </div>
+
+                    <div class="bg-red-50 border-2 border-kptm-crimson text-kptm-crimson rounded-lg p-3 text-[13px] font-bold flex justify-between items-center shadow-sm">
+                        <span>16:00-17:00</span>
+                        <span class="text-[11px] font-bold uppercase tracking-wider">(Selected)</span>
+                    </div>
+
+                    <div class="bg-white border border-gray-300 text-gray-900 rounded-lg p-3 text-[13px] font-medium flex justify-between items-center tap-effect">
+                        <span>17:00-18:00</span>
+                        <span class="text-[11px] text-semantic-emptyText font-semibold">(Available)</span>
+                    </div>
+                </div>
+
+                <div class="bg-blue-50 border border-blue-200 text-[#2456A6] p-2.5 rounded-lg text-[12px] font-bold mb-4">
+                    Selected slot: 16:00-17:00
+                </div>
+            </div>
+
+            <!-- Actions -->
+            <div class="flex flex-col gap-2 pt-2 border-t border-gray-100">
+                <a href="bookings.html" class="w-full bg-kptm-crimson text-white font-bold py-3 rounded-xl text-[14px] text-center tap-effect shadow-sm">
+                    Confirm Change
+                </a>
+                <a href="bookings.html" class="w-full bg-white border border-gray-300 text-gray-800 font-semibold py-3 rounded-xl text-[14px] text-center tap-effect">
+                    Keep Current Booking
+                </a>
+            </div>
+
+            <p class="text-[11px] text-gray-400 text-center mt-1">
+                Demo cancellation deadline: 13 Oct, 15:00 MYT. No actual reservation can be cancelled here.
+            </p>
+        </div>
+
+        <!-- Session Guidance Card -->
+        <div class="bg-gray-100 p-3 rounded-lg border border-gray-200">
+            <h3 class="font-bold text-[12px] text-gray-900 mb-0.5">Manage your session</h3>
+            <p class="text-[11px] text-gray-600 leading-relaxed">
+                Changing a booking starts a new availability review. Your current reservation stays confirmed until the change succeeds.
+            </p>
+        </div>
+    </main>
+
+    <!-- Persistent Bottom Navigation Bar -->
+    <nav class="bg-white border-t border-gray-200 flex justify-around items-center pt-3 pb-6 px-2 absolute bottom-0 w-full z-20">
+        <a href="index.html" class="nav-item flex flex-col items-center gap-1 w-[72px] tap-effect">
+            <i class="ph ph-house text-[24px]"></i>
+            <span class="text-[11px] font-semibold">Home</span>
+        </a>
+        <a href="search.html" class="nav-item flex flex-col items-center gap-1 w-[72px] tap-effect">
+            <i class="ph ph-squares-four text-[24px]"></i>
+            <span class="text-[11px] font-semibold">Rooms</span>
+        </a>
+        <a href="bookings.html" class="nav-item active flex flex-col items-center gap-1 w-[72px] tap-effect">
+            <i class="ph-fill ph-calendar-blank text-[24px]"></i>
+            <span class="text-[11px] font-semibold">Bookings</span>
+        </a>
+        <a href="tracking.html" class="nav-item flex flex-col items-center gap-1 w-[72px] tap-effect">
+            <i class="ph ph-wrench text-[24px]"></i>
+            <span class="text-[11px] font-semibold">Repairs</span>
+        </a>
+    </nav>
+
+    <!-- figma:body-end -->
+</body>
+</html>

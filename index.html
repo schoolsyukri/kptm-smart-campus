@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="<!-- figma:lang -->">
+<head>
+    <!-- figma:head-start -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><!-- figma:title -->Student Dashboard - KPTM Smart Campus</title>
+    
+    <!-- Google Fonts & Phosphor Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        kptm: { crimson: '#A6192E', maroon: '#672728' },
+                        semantic: { warning: '#FFF8E5', warningText: '#855A00', emptyText: '#166534', emptyBorder: '#bbf7d0' }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+        .tap-effect:active { transform: scale(0.96); transition: transform 0.1s ease-out; }
+        .nav-item.active { color: #A6192E; }
+        .nav-item { color: #9ca3af; transition: color 0.2s ease; }
+        .nav-item:hover { color: #6b7280; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+    <!-- figma:head-end -->
+</head>
+<body class="bg-gray-50 text-gray-900 h-[844px] w-[390px] border border-gray-200 mx-auto flex flex-col justify-between overflow-hidden relative shadow-xl">
+    <!-- figma:body-start -->
+    
+    <!-- Top Bar Header -->
+    <header class="bg-kptm-crimson text-white px-5 py-4 flex justify-between items-center z-10">
+        <div class="flex flex-col">
+            <span class="font-bold text-lg leading-tight tracking-tight">KPTM Smart Campus</span>
+            <span class="text-[13px] opacity-90">Batu Pahat</span>
+        </div>
+        <div class="w-[34px] h-[34px] rounded-full bg-white text-kptm-crimson flex items-center justify-center font-bold text-xs shadow-sm">
+            BBY
+        </div>
+    </header>
+
+    <!-- Scrollable Main Viewport -->
+    <main class="flex-1 overflow-y-auto px-5 py-6 no-scrollbar pb-24">
+        <p class="text-[11px] font-bold tracking-[0.15em] text-gray-500 uppercase mb-1.5">KPTM Batu Pahat / Smart Campus</p>
+        <h1 class="text-[32px] leading-[38.4px] font-bold mb-2">Dashboard</h1>
+        <p class="text-[14px] leading-[21px] text-gray-600 mb-8">Good afternoon, Bao bao Aira. Plan your next project session.</p>
+
+        <!-- Primary Actions -->
+        <div class="grid grid-cols-2 gap-4 mb-10">
+            <a href="search.html" class="tap-effect bg-white border border-gray-200 rounded-[16px] py-6 px-4 flex flex-col items-center justify-center shadow-sm">
+                <i class="ph ph-magnifying-glass text-kptm-crimson text-[32px] mb-3"></i>
+                <span class="font-semibold text-[14px] text-gray-900">Book a Facility</span>
+            </a>
+            <a href="report.html" class="tap-effect bg-white border border-gray-200 rounded-[16px] py-6 px-4 flex flex-col items-center justify-center shadow-sm">
+                <i class="ph ph-wrench text-gray-700 text-[32px] mb-3"></i>
+                <span class="font-semibold text-[14px] text-gray-900">Report equipment</span>
+            </a>
+        </div>
+
+        <!-- Live Room Status List -->
+        <h2 class="text-lg font-bold mb-4">Room conditions</h2>
+        <div class="flex flex-col gap-3">
+            <div class="bg-white border border-gray-200 rounded-xl p-4 flex justify-between items-center shadow-sm">
+                <div class="flex flex-col gap-0.5">
+                    <h3 class="font-bold text-[15px] text-gray-900 leading-tight">Networking Lab 2</h3>
+                    <p class="text-[13px] text-gray-500">12/24 seats</p>
+                </div>
+                <div class="flex items-center gap-1.5 bg-semantic-warning text-semantic-warningText px-3 py-1 rounded-full text-xs font-bold">
+                    <i class="ph-fill ph-warning text-sm"></i><span>In use</span>
+                </div>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-xl p-4 flex justify-between items-center shadow-sm">
+                <div class="flex flex-col gap-0.5">
+                    <h3 class="font-bold text-[15px] text-gray-900 leading-tight">Hardware Makerspace</h3>
+                    <p class="text-[13px] text-gray-500">12/12 seats</p>
+                </div>
+                <div class="flex items-center gap-1.5 bg-kptm-crimson text-white px-3 py-1 rounded-full text-xs font-bold">
+                    <i class="ph-fill ph-warning-circle text-sm"></i><span>Full</span>
+                </div>
+            </div>
+
+            <div class="bg-white border border-gray-200 rounded-xl p-4 flex justify-between items-center shadow-sm">
+                <div class="flex flex-col gap-0.5">
+                    <h3 class="font-bold text-[15px] text-gray-900 leading-tight">Discussion Room 1</h3>
+                    <p class="text-[13px] text-gray-500">0/6 seats</p>
+                </div>
+                <div class="flex items-center gap-1.5 border border-semantic-emptyBorder text-semantic-emptyText bg-green-50 px-3 py-1 rounded-full text-xs font-bold">
+                    <i class="ph-bold ph-check text-sm"></i><span>Empty</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Persistent Bottom Navigation Bar -->
+    <nav class="bg-white border-t border-gray-200 flex justify-around items-center pt-3 pb-6 px-2 absolute bottom-0 w-full z-20">
+        <a href="index.html" class="nav-item active flex flex-col items-center gap-1 w-[72px] tap-effect">
+            <i class="ph-fill ph-house text-[24px]"></i>
+            <span class="text-[11px] font-semibold">Home</span>
+        </a>
+        <a href="search.html" class="nav-item flex flex-col items-center gap-1 w-[72px] tap-effect">
+            <i class="ph ph-squares-four text-[24px]"></i>
+            <span class="text-[11px] font-semibold">Rooms</span>
+        </a>
+        <a href="bookings.html" class="nav-item flex flex-col items-center gap-1 w-[72px] tap-effect">
+            <i class="ph ph-calendar-blank text-[24px]"></i>
+            <span class="text-[11px] font-semibold">Bookings</span>
+        </a>
+        <a href="tracking.html" class="nav-item flex flex-col items-center gap-1 w-[72px] tap-effect">
+            <i class="ph ph-wrench text-[24px]"></i>
+            <span class="text-[11px] font-semibold">Repairs</span>
+        </a>
+    </nav>
+
+    <!-- figma:body-end -->
+</body>
+</html>

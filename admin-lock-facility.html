@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="<!-- figma:lang -->">
+<head>
+    <!-- figma:head-start -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><!-- figma:title -->Lock Facility & Override - Admin Workstation</title>
+    
+    <!-- Google Fonts & Phosphor Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        kptm: { crimson: '#A6192E', maroon: '#672728', dark: '#1F2937' },
+                        semantic: { warning: '#FFF8E5', warningText: '#855A00', emptyText: '#166534' }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+        .tap-effect:active { transform: scale(0.98); transition: transform 0.1s ease-out; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+    <!-- figma:head-end -->
+</head>
+<body class="bg-gray-100 text-gray-900 h-[844px] w-[390px] border border-gray-300 mx-auto flex flex-col justify-between overflow-hidden relative shadow-2xl">
+    <!-- figma:body-start -->
+    
+    <!-- Admin Top Header -->
+    <header class="bg-kptm-dark text-white px-5 py-4 flex justify-between items-center z-10 border-b border-gray-800">
+        <div class="flex flex-col">
+            <span class="font-bold text-lg leading-tight tracking-tight flex items-center gap-1.5">
+                <i class="ph-fill ph-shield-check text-kptm-crimson"></i> Admin Workstation
+            </span>
+            <span class="text-[12px] opacity-75">KPTM Batu Pahat · Emergency Controls</span>
+        </div>
+        <div class="w-[34px] h-[34px] rounded-full bg-gray-800 text-white border border-gray-600 flex items-center justify-center font-bold text-xs">
+            ADM
+        </div>
+    </header>
+
+    <!-- Scrollable Main Viewport -->
+    <main class="flex-1 overflow-y-auto px-5 py-5 no-scrollbar pb-10">
+        <!-- Back Link -->
+        <a href="admin-dashboard.html" class="inline-flex items-center gap-1.5 text-gray-600 font-semibold text-[13px] mb-4 tap-effect">
+            <i class="ph-bold ph-arrow-left"></i> Back to admin dashboard
+        </a>
+
+        <p class="text-[11px] font-bold tracking-[0.15em] text-red-600 uppercase mb-1">Administrative Safety Override</p>
+        <h1 class="text-[26px] leading-[32px] font-bold text-gray-900 mb-1">Lock Facility & Override</h1>
+        <p class="text-[12px] text-gray-600 mb-4">Set an emergency room lock to disable search visibility and revoke reservations.</p>
+
+        <!-- Warning Alert Banner -->
+        <div class="bg-red-50 border-2 border-kptm-crimson rounded-xl p-4 mb-4 shadow-sm flex items-start gap-3">
+            <i class="ph-bold ph-warning-octagon text-kptm-crimson text-[26px] shrink-0 mt-0.5"></i>
+            <div>
+                <h2 class="font-bold text-[14px] text-kptm-crimson mb-0.5">High-Impact Action</h2>
+                <p class="text-[12px] text-gray-800 leading-relaxed">
+                    Locking a room will disable all student bookings for this space and trigger cancellation alerts to affected students.
+                </p>
+            </div>
+        </div>
+
+        <form action="admin-dashboard.html" class="space-y-3.5">
+            <!-- Facility Selection -->
+            <div>
+                <label class="block text-[12px] font-bold text-gray-700 mb-1">Target Facility *</label>
+                <select class="w-full bg-white border border-gray-300 rounded-lg p-2.5 text-[12px] font-bold text-gray-900 focus:outline-none focus:border-kptm-crimson">
+                    <option value="nl2" selected>Networking Lab 2 (Computing Block Level 1)</option>
+                    <option value="hm">Hardware Makerspace (Innovation Area Ground Floor)</option>
+                    <option value="dr1">Discussion Room 1 (Learning Commons)</option>
+                </select>
+            </div>
+
+            <!-- Lockdown Scope -->
+            <div>
+                <label class="block text-[12px] font-bold text-gray-700 mb-1">Lockout Scope *</label>
+                <select class="w-full bg-white border border-gray-300 rounded-lg p-2.5 text-[12px] font-medium text-gray-800 focus:outline-none">
+                    <option value="full" selected>Full Facility Lockout (Door Lock + All Slots Disabled)</option>
+                    <option value="maintenance">Maintenance Access Only (Staff Badge Entry)</option>
+                </select>
+            </div>
+
+            <!-- Reason Selection -->
+            <div>
+                <label class="block text-[12px] font-bold text-gray-700 mb-1">Reason for Override *</label>
+                <select class="w-full bg-white border border-gray-300 rounded-lg p-2.5 text-[12px] font-medium text-gray-800 focus:outline-none">
+                    <option value="safety" selected>Severe Electrical / Power Safety Hazard</option>
+                    <option value="renovation">Unscheduled Emergency Maintenance</option>
+                    <option value="event">Priority Campus Event Reservation</option>
+                </select>
+            </div>
+
+            <!-- Affected Bookings Preview -->
+            <div class="bg-gray-50 border border-gray-200 rounded-xl p-3.5 space-y-2">
+                <span class="text-[11px] font-bold text-gray-500 uppercase tracking-wider block">Impact Summary</span>
+                
+                <div class="flex justify-between text-[12px]">
+                    <span class="text-gray-600">Active Bookings Revoked:</span>
+                    <span class="font-bold text-kptm-crimson">1 booking (BK-261013-042)</span>
+                </div>
+                <div class="flex justify-between text-[12px]">
+                    <span class="text-gray-600">Affected Student:</span>
+                    <span class="font-semibold text-gray-800">Bao bao Aira</span>
+                </div>
+                <div class="flex justify-between text-[12px]">
+                    <span class="text-gray-600">Automated Action:</span>
+                    <span class="font-semibold text-gray-800">Push notice + status update</span>
+                </div>
+            </div>
+
+            <!-- Confirmation Checkbox -->
+            <div class="flex items-start gap-2.5 pt-1">
+                <input type="checkbox" id="confirm_lock" required class="w-4 h-4 mt-0.5 text-kptm-crimson rounded border-gray-300 focus:ring-kptm-crimson">
+                <label for="confirm_lock" class="text-[11px] font-medium text-gray-700 leading-tight">
+                    I confirm that this emergency override is authorized by campus ICT facilities staff.
+                </label>
+            </div>
+
+            <!-- Actions -->
+            <div class="pt-2 flex flex-col gap-2">
+                <button type="submit" class="w-full bg-kptm-crimson text-white font-bold py-3.5 rounded-xl text-[14px] tap-effect shadow-md text-center">
+                    Execute Room Lockdown & Clear Slots
+                </button>
+                <a href="admin-dashboard.html" class="w-full bg-white border border-gray-300 text-gray-700 font-semibold py-2.5 rounded-xl text-[13px] text-center tap-effect">
+                    Abort Lockdown
+                </a>
+            </div>
+        </form>
+    </main>
+
+    <!-- Bottom Admin Console Status Bar -->
+    <footer class="bg-kptm-dark text-gray-400 px-5 py-3 border-t border-gray-800 flex justify-between items-center text-[11px]">
+        <span class="flex items-center gap-1.5 font-medium">
+            <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span> Override Ready
+        </span>
+        <span class="font-mono">v2.4-admin</span>
+    </footer>
+
+    <!-- figma:body-end -->
+</body>
+</html>

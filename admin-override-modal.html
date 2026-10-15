@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="<!-- figma:lang -->">
+<head>
+    <!-- figma:head-start -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><!-- figma:title -->Administrative Override Modal - Admin Workstation</title>
+    
+    <!-- Google Fonts & Phosphor Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        kptm: { crimson: '#A6192E', maroon: '#672728', dark: '#1F2937' },
+                        semantic: { warning: '#FFF8E5', warningText: '#855A00', emptyText: '#166534' }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+        .tap-effect:active { transform: scale(0.98); transition: transform 0.1s ease-out; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+    <!-- figma:head-end -->
+</head>
+<body class="bg-gray-100 text-gray-900 h-[844px] w-[390px] border border-gray-300 mx-auto flex flex-col justify-between overflow-hidden relative shadow-2xl">
+    <!-- figma:body-start -->
+    
+    <!-- Dimmed Background Dashboard View (Visual Backdrop) -->
+    <div class="absolute inset-0 bg-gray-900/70 z-20 backdrop-blur-[2px] flex items-end justify-center p-4">
+        
+        <!-- Modal Dialog Card Container -->
+        <div class="bg-white w-full rounded-2xl p-5 shadow-2xl border border-gray-200 flex flex-col gap-4 animate-in fade-in slide-in-from-bottom duration-200">
+            
+            <!-- Modal Header -->
+            <div class="flex justify-between items-start border-b border-gray-100 pb-3">
+                <div class="flex items-center gap-2.5">
+                    <div class="w-9 h-9 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center font-bold">
+                        <i class="ph-bold ph-key text-[20px]"></i>
+                    </div>
+                    <div>
+                        <span class="text-[10px] font-bold text-amber-800 uppercase tracking-wider block">Admin Privilege</span>
+                        <h2 class="font-bold text-[16px] text-gray-900 leading-tight">Schedule Slot Override</h2>
+                    </div>
+                </div>
+                <a href="admin-dashboard.html" class="text-gray-400 hover:text-gray-600 tap-effect p-1">
+                    <i class="ph-bold ph-x text-[20px]"></i>
+                </a>
+            </div>
+
+            <!-- Active Conflict Summary -->
+            <div class="bg-amber-50 border border-amber-200 rounded-xl p-3 text-[12px] space-y-1">
+                <div class="flex justify-between text-amber-900 font-bold">
+                    <span>Networking Lab 2</span>
+                    <span>15:00 - 16:00 MYT</span>
+                </div>
+                <p class="text-amber-800 text-[11px] leading-tight">
+                    Current Holder: <span class="font-bold">BK-261013-042 (Bao bao Aira)</span>
+                </p>
+                <p class="text-[10px] text-amber-700 italic">
+                    Executing an override will reassign or cancel the student's booking slot.
+                </p>
+            </div>
+
+            <form action="admin-dashboard.html" class="space-y-3">
+                <!-- Override Type Select -->
+                <div>
+                    <label class="block text-[11px] font-bold text-gray-700 mb-1">Override Action Type *</label>
+                    <select class="w-full bg-white border border-gray-300 rounded-lg p-2.5 text-[12px] font-semibold text-gray-800 focus:outline-none focus:border-kptm-crimson">
+                        <option value="reassign" selected>Force Reassign Student to Discussion Room 1</option>
+                        <option value="evict">Revoke & Cancel Student Reservation</option>
+                        <option value="double">Bypass Slot Lock (Faculty Priority Session)</option>
+                    </select>
+                </div>
+
+                <!-- Reason for Privilege Use -->
+                <div>
+                    <label class="block text-[11px] font-bold text-gray-700 mb-1">Authorization Justification *</label>
+                    <textarea rows="2" class="w-full bg-white border border-gray-300 rounded-lg p-2.5 text-[12px] font-medium text-gray-800 focus:outline-none focus:border-kptm-crimson placeholder-gray-400" placeholder="Specify why slot is being overridden (e.g. Dean's Emergency Briefing)...">Unscheduled Faculty Accreditation Audit require immediate lab hardware demonstration space.</textarea>
+                </div>
+
+                <!-- Security PIN Verification -->
+                <div>
+                    <label class="block text-[11px] font-bold text-gray-700 mb-1">Admin Security Code</label>
+                    <input type="password" value="••••" class="w-full bg-gray-50 border border-gray-300 rounded-lg p-2.5 text-[12px] font-mono font-bold text-gray-900 tracking-widest focus:outline-none">
+                </div>
+
+                <!-- Modal Action Buttons -->
+                <div class="pt-2 flex flex-col gap-2">
+                    <button type="submit" class="w-full bg-kptm-crimson text-white font-bold py-3 rounded-xl text-[13px] tap-effect shadow-md text-center">
+                        Confirm & Execute Override
+                    </button>
+                    <a href="admin-dashboard.html" class="w-full bg-gray-100 border border-gray-300 text-gray-700 font-semibold py-2.5 rounded-xl text-[12px] text-center tap-effect">
+                        Dismiss / Keep Original
+                    </a>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <!-- Background Content Peek (Underneath Layer) -->
+    <header class="bg-kptm-dark text-white px-5 py-4 flex justify-between items-center z-10 border-b border-gray-800">
+        <div class="flex flex-col">
+            <span class="font-bold text-lg leading-tight tracking-tight flex items-center gap-1.5">
+                <i class="ph-fill ph-shield-check text-kptm-crimson"></i> Admin Workstation
+            </span>
+            <span class="text-[12px] opacity-75">KPTM Batu Pahat</span>
+        </div>
+    </header>
+
+    <main class="flex-1 px-5 py-5">
+        <div class="bg-white p-4 rounded-xl border border-gray-200">
+            <h2 class="font-bold text-[14px]">Networking Lab 2 Schedule</h2>
+            <p class="text-[12px] text-gray-500">13 Oct 2026 Session Matrix</p>
+        </div>
+    </main>
+
+    <!-- Bottom Admin Console Status Bar -->
+    <footer class="bg-kptm-dark text-gray-400 px-5 py-3 border-t border-gray-800 flex justify-between items-center text-[11px]">
+        <span class="flex items-center gap-1.5 font-medium">
+            <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span> Modal Prompt Active
+        </span>
+        <span class="font-mono">v2.4-admin</span>
+    </footer>
+
+    <!-- figma:body-end -->
+</body>
+</html>

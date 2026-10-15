@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="<!-- figma:lang -->">
+<head>
+    <!-- figma:head-start -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><!-- figma:title -->Repair Triage Matrix - Admin Workstation</title>
+    
+    <!-- Google Fonts & Phosphor Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        kptm: { crimson: '#A6192E', maroon: '#672728', dark: '#1F2937' },
+                        semantic: { warning: '#FFF8E5', warningText: '#855A00', emptyText: '#166534' }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+        .tap-effect:active { transform: scale(0.98); transition: transform 0.1s ease-out; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+    <!-- figma:head-end -->
+</head>
+<body class="bg-gray-100 text-gray-900 h-[844px] w-[390px] border border-gray-300 mx-auto flex flex-col justify-between overflow-hidden relative shadow-2xl">
+    <!-- figma:body-start -->
+    
+    <!-- Admin Top Header -->
+    <header class="bg-kptm-dark text-white px-5 py-4 flex justify-between items-center z-10 border-b border-gray-800">
+        <div class="flex flex-col">
+            <span class="font-bold text-lg leading-tight tracking-tight flex items-center gap-1.5">
+                <i class="ph-fill ph-shield-check text-kptm-crimson"></i> Admin Workstation
+            </span>
+            <span class="text-[12px] opacity-75">KPTM Batu Pahat · Maintenance Queue</span>
+        </div>
+        <div class="w-[34px] h-[34px] rounded-full bg-gray-800 text-white border border-gray-600 flex items-center justify-center font-bold text-xs">
+            ADM
+        </div>
+    </header>
+
+    <!-- Scrollable Main Viewport -->
+    <main class="flex-1 overflow-y-auto px-5 py-5 no-scrollbar pb-10">
+        <!-- Back Link -->
+        <a href="admin-dashboard.html" class="inline-flex items-center gap-1.5 text-gray-600 font-semibold text-[13px] mb-4 tap-effect">
+            <i class="ph-bold ph-arrow-left"></i> Back to admin dashboard
+        </a>
+
+        <p class="text-[11px] font-bold tracking-[0.15em] text-gray-500 uppercase mb-1">ICT Maintenance Triage</p>
+        <h1 class="text-[26px] leading-[32px] font-bold text-gray-900 mb-4">Repair Triage Matrix</h1>
+
+        <!-- Filter Status Pills -->
+        <div class="flex items-center gap-2 overflow-x-auto no-scrollbar mb-4 pb-1">
+            <span class="bg-kptm-dark text-white text-[11px] font-bold px-3 py-1.5 rounded-full shrink-0">
+                All Tickets (3)
+            </span>
+            <span class="bg-white border border-gray-300 text-gray-700 text-[11px] font-semibold px-3 py-1.5 rounded-full shrink-0">
+                High Urgency (1)
+            </span>
+            <span class="bg-white border border-gray-300 text-gray-700 text-[11px] font-semibold px-3 py-1.5 rounded-full shrink-0">
+                Isolated (1)
+            </span>
+        </div>
+
+        <!-- Ticket Cards Matrix Feed -->
+        <div class="flex flex-col gap-3.5 mb-6">
+            
+            <!-- Ticket 1: RPT-1042 (Primary Demo Focus) -->
+            <div class="bg-white border-2 border-kptm-crimson rounded-xl p-4 shadow-sm flex flex-col gap-3">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <span class="text-[10px] font-bold text-kptm-crimson uppercase tracking-wider block">Ticket #RPT-1042</span>
+                        <h2 class="font-bold text-[15px] text-gray-900">PRJ-NL2 (Ceiling Projector)</h2>
+                    </div>
+                    <span class="bg-amber-100 text-amber-800 text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1">
+                        <i class="ph-fill ph-warning"></i> High Urgency
+                    </span>
+                </div>
+
+                <div class="text-[12px] text-gray-600 space-y-1">
+                    <p><span class="font-semibold text-gray-800">Facility:</span> Networking Lab 2 (Level 1)</p>
+                    <p><span class="font-semibold text-gray-800">Fault:</span> Power failure, rapid orange LED flash</p>
+                    <p><span class="font-semibold text-gray-800">Reported:</span> 13 Oct 14:15 by Bao bao Aira</p>
+                </div>
+
+                <!-- Isolation Override Status Box -->
+                <div class="bg-amber-50 border border-amber-200 p-2.5 rounded-lg flex items-center justify-between">
+                    <div class="flex items-center gap-2 text-amber-900 text-[11px] font-semibold">
+                        <i class="ph-fill ph-lock-key text-amber-700"></i>
+                        <span>Item Status: Isolated</span>
+                    </div>
+                    <span class="text-[10px] bg-amber-200 text-amber-900 font-bold px-2 py-0.5 rounded">Active</span>
+                </div>
+
+                <div class="flex gap-2 pt-1">
+                    <a href="admin-ticket-details.html" class="flex-1 bg-kptm-dark text-white text-center font-bold py-2 rounded-lg text-[12px] tap-effect">
+                        Inspect Ticket Details
+                    </a>
+                    <a href="admin-lock-facility.html" class="bg-red-50 border border-red-200 text-kptm-crimson font-bold px-3 py-2 rounded-lg text-[12px] tap-effect flex items-center justify-center">
+                        Lock Room
+                    </a>
+                </div>
+            </div>
+
+            <!-- Ticket 2: RPT-1041 -->
+            <div class="bg-white border border-gray-200 rounded-xl p-4 shadow-sm flex flex-col gap-3 opacity-90">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider block">Ticket #RPT-1041</span>
+                        <h2 class="font-bold text-[15px] text-gray-900">AC-DR1 (Air Conditioner Unit)</h2>
+                    </div>
+                    <span class="bg-blue-100 text-blue-800 text-[10px] font-bold px-2 py-0.5 rounded-full">
+                        Medium Urgency
+                    </span>
+                </div>
+
+                <div class="text-[12px] text-gray-600 space-y-1">
+                    <p><span class="font-semibold text-gray-800">Facility:</span> Discussion Room 1 (Ground Floor)</p>
+                    <p><span class="font-semibold text-gray-800">Fault:</span> Insufficient cooling, fan motor noise</p>
+                    <p><span class="font-semibold text-gray-800">Reported:</span> 12 Oct 11:30 by Campus Staff</p>
+                </div>
+
+                <div class="flex items-center justify-between bg-gray-50 p-2.5 rounded-lg border border-gray-200">
+                    <span class="text-[11px] font-medium text-gray-600">Status: Pending technician review</span>
+                    <span class="text-[10px] text-gray-500">Scheduled 14 Oct</span>
+                </div>
+            </div>
+
+            <!-- Ticket 3: RPT-1039 -->
+            <div class="bg-white border border-gray-200 rounded-xl p-4 shadow-sm flex flex-col gap-3 opacity-75">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <span class="text-[10px] font-bold text-gray-400 uppercase tracking-wider block">Ticket #RPT-1039</span>
+                        <h2 class="font-bold text-[15px] text-gray-900">SW-HM1 (Managed Switch Port 8)</h2>
+                    </div>
+                    <span class="bg-green-100 text-emerald-800 text-[10px] font-bold px-2 py-0.5 rounded-full">
+                        Resolved
+                    </span>
+                </div>
+
+                <div class="text-[12px] text-gray-600 space-y-1">
+                    <p><span class="font-semibold text-gray-800">Facility:</span> Hardware Makerspace</p>
+                    <p><span class="font-semibold text-gray-800">Resolution:</span> Replaced patch cable and re-registered VLAN</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Quick Admin Links -->
+        <div class="flex flex-col gap-2">
+            <a href="admin-log-ticket.html" class="w-full bg-white border border-gray-300 text-gray-800 font-semibold py-2.5 rounded-xl text-[13px] text-center tap-effect shadow-sm">
+                + Log New Maintenance Ticket
+            </a>
+        </div>
+    </main>
+
+    <!-- Bottom Admin Console Status Bar -->
+    <footer class="bg-kptm-dark text-gray-400 px-5 py-3 border-t border-gray-800 flex justify-between items-center text-[11px]">
+        <span class="flex items-center gap-1.5 font-medium">
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Matrix Operational
+        </span>
+        <span class="font-mono">v2.4-admin</span>
+    </footer>
+
+    <!-- figma:body-end -->
+</body>
+</html>

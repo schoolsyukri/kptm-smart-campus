@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="<!-- figma:lang -->">
+<head>
+    <!-- figma:head-start -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><!-- figma:title -->Ticket Inspection #RPT-1042 - Admin Workstation</title>
+    
+    <!-- Google Fonts & Phosphor Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        kptm: { crimson: '#A6192E', maroon: '#672728', dark: '#1F2937' },
+                        semantic: { warning: '#FFF8E5', warningText: '#855A00', emptyText: '#166534' }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+        .tap-effect:active { transform: scale(0.98); transition: transform 0.1s ease-out; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+    <!-- figma:head-end -->
+</head>
+<body class="bg-gray-100 text-gray-900 h-[844px] w-[390px] border border-gray-300 mx-auto flex flex-col justify-between overflow-hidden relative shadow-2xl">
+    <!-- figma:body-start -->
+    
+    <!-- Admin Top Header -->
+    <header class="bg-kptm-dark text-white px-5 py-4 flex justify-between items-center z-10 border-b border-gray-800">
+        <div class="flex flex-col">
+            <span class="font-bold text-lg leading-tight tracking-tight flex items-center gap-1.5">
+                <i class="ph-fill ph-shield-check text-kptm-crimson"></i> Admin Workstation
+            </span>
+            <span class="text-[12px] opacity-75">KPTM Batu Pahat · Ticket Inspection</span>
+        </div>
+        <div class="w-[34px] h-[34px] rounded-full bg-gray-800 text-white border border-gray-600 flex items-center justify-center font-bold text-xs">
+            ADM
+        </div>
+    </header>
+
+    <!-- Scrollable Main Viewport -->
+    <main class="flex-1 overflow-y-auto px-5 py-5 no-scrollbar pb-10">
+        <!-- Back Link -->
+        <a href="admin-repairs.html" class="inline-flex items-center gap-1.5 text-gray-600 font-semibold text-[13px] mb-4 tap-effect">
+            <i class="ph-bold ph-arrow-left"></i> Back to triage matrix
+        </a>
+
+        <!-- Header Info -->
+        <div class="flex justify-between items-start mb-4">
+            <div>
+                <span class="text-[11px] font-bold text-kptm-crimson uppercase tracking-wider block">Inspection View</span>
+                <h1 class="text-[24px] leading-[30px] font-bold text-gray-900">Ticket #RPT-1042</h1>
+            </div>
+            <span class="bg-amber-100 text-amber-800 text-[11px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1">
+                <i class="ph-fill ph-warning"></i> High Urgency
+            </span>
+        </div>
+
+        <!-- Ticket Summary Card -->
+        <div class="bg-white border border-gray-200 rounded-xl p-4 shadow-sm mb-4 flex flex-col gap-3">
+            <h2 class="font-bold text-[14px] text-gray-900 border-b border-gray-100 pb-2">Equipment Overview</h2>
+
+            <div class="space-y-2 text-[12px]">
+                <div class="flex justify-between">
+                    <span class="text-gray-500">Target Item:</span>
+                    <span class="font-bold text-gray-900">PRJ-NL2 (Ceiling Projector)</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-gray-500">Location:</span>
+                    <span class="font-semibold text-gray-800">Networking Lab 2 · Level 1</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-gray-500">Reported By:</span>
+                    <span class="font-semibold text-gray-800">Bao bao Aira (Student)</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-gray-500">Timestamp:</span>
+                    <span class="font-semibold text-gray-800">13 Oct 2026, 14:15 MYT</span>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 p-3 rounded-lg border border-gray-200 mt-1">
+                <span class="text-[11px] font-bold text-gray-500 block mb-1">Student Description:</span>
+                <p class="text-[12px] text-gray-800 leading-relaxed italic">
+                    "Projector PRJ-NL2 does not turn on when pressing the power switch or remote controller. Power LED flashes orange rapidly."
+                </p>
+            </div>
+        </div>
+
+        <!-- Attachment Preview -->
+        <div class="bg-white border border-gray-200 rounded-xl p-4 shadow-sm mb-4">
+            <h3 class="font-bold text-[13px] text-gray-900 mb-2">Student Photo Attachment</h3>
+            <div class="bg-gray-100 border border-gray-300 rounded-lg h-32 flex flex-col items-center justify-center text-center p-3">
+                <i class="ph-bold ph-image text-gray-400 text-[32px] mb-1"></i>
+                <span class="text-[11px] font-semibold text-gray-600">prj_nl2_fault_photo.jpg</span>
+                <span class="text-[10px] text-gray-400">Captured 13 Oct 14:12 MYT · 2.4 MB</span>
+            </div>
+        </div>
+
+        <!-- Audit Trail Log -->
+        <div class="bg-white border border-gray-200 rounded-xl p-4 shadow-sm mb-5">
+            <h3 class="font-bold text-[13px] text-gray-900 mb-3">Activity Audit Trail</h3>
+            
+            <div class="space-y-3 text-[11px]">
+                <div class="border-l-2 border-green-600 pl-3 py-0.5">
+                    <p class="font-bold text-gray-900">Ticket Created</p>
+                    <p class="text-gray-500">13 Oct 14:15 · Submitted via Student App</p>
+                </div>
+                <div class="border-l-2 border-amber-500 pl-3 py-0.5">
+                    <p class="font-bold text-gray-900">Flagged Item as Isolated</p>
+                    <p class="text-gray-500">13 Oct 14:30 · ICT Admin (ADM-02)</p>
+                </div>
+                <div class="border-l-2 border-blue-500 pl-3 py-0.5">
+                    <p class="font-bold text-gray-900">Dispatch Order Sent</p>
+                    <p class="text-gray-500">13 Oct 15:00 · Technician Assigned</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Admin Action Buttons -->
+        <div class="flex flex-col gap-2.5">
+            <a href="admin-lock-facility.html" class="w-full bg-kptm-crimson text-white font-bold py-3 rounded-xl text-[13px] text-center tap-effect shadow-sm">
+                Override & Emergency Lock Room
+            </a>
+            <a href="admin-repairs.html" class="w-full bg-white border border-gray-300 text-gray-800 font-semibold py-3 rounded-xl text-[13px] text-center tap-effect">
+                Return to Triage Matrix
+            </a>
+        </div>
+    </main>
+
+    <!-- Bottom Admin Console Status Bar -->
+    <footer class="bg-kptm-dark text-gray-400 px-5 py-3 border-t border-gray-800 flex justify-between items-center text-[11px]">
+        <span class="flex items-center gap-1.5 font-medium">
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Inspection Active
+        </span>
+        <span class="font-mono">v2.4-admin</span>
+    </footer>
+
+    <!-- figma:body-end -->
+</body>
+</html>
